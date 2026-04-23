@@ -1,0 +1,169 @@
+{
+  "info": {
+    "name": "TechStore API",
+    "description": "REST API для интернет-магазина TechStore",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Categories",
+      "item": [
+        {
+          "name": "POST /categories — Создать категорию",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Смартфоны\",\n  \"description\": \"Мобильные телефоны и смартфоны\"\n}"
+            },
+            "url": {
+              "raw": "http://localhost:8000/categories",
+              "host": [
+                "localhost"
+              ],
+              "port": "8000",
+              "path": [
+                "categories"
+              ]
+            }
+          }
+        },
+        {
+          "name": "GET /categories — Все категории",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "http://localhost:8000/categories",
+              "host": [
+                "localhost"
+              ],
+              "port": "8000",
+              "path": [
+                "categories"
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Products",
+      "item": [
+        {
+          "name": "GET /products — Все товары",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "http://localhost:8000/products",
+              "host": [
+                "localhost"
+              ],
+              "port": "8000",
+              "path": [
+                "products"
+              ]
+            }
+          }
+        },
+        {
+          "name": "GET /products?category=1 — Фильтр по категории",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "http://localhost:8000/products?category=1",
+              "host": [
+                "localhost"
+              ],
+              "port": "8000",
+              "path": [
+                "products"
+              ],
+              "query": [
+                {
+                  "key": "category",
+                  "value": "1"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "name": "POST /products — Добавить товар",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"iPhone 15 Pro\",\n  \"price\": 89999.99,\n  \"stock\": 25,\n  \"category_id\": 1\n}"
+            },
+            "url": {
+              "raw": "http://localhost:8000/products",
+              "host": [
+                "localhost"
+              ],
+              "port": "8000",
+              "path": [
+                "products"
+              ]
+            }
+          }
+        },
+        {
+          "name": "PATCH /products/1 — Обновить цену/количество",
+          "request": {
+            "method": "PATCH",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"price\": 79999.99,\n  \"stock\": 30\n}"
+            },
+            "url": {
+              "raw": "http://localhost:8000/products/1",
+              "host": [
+                "localhost"
+              ],
+              "port": "8000",
+              "path": [
+                "products",
+                "1"
+              ]
+            }
+          }
+        },
+        {
+          "name": "DELETE /products/1 — Удалить товар",
+          "request": {
+            "method": "DELETE",
+            "url": {
+              "raw": "http://localhost:8000/products/1",
+              "host": [
+                "localhost"
+              ],
+              "port": "8000",
+              "path": [
+                "products",
+                "1"
+              ]
+            }
+          }
+        }
+      ]
+    }
+  ]
+}
